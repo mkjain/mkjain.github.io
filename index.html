@@ -24,11 +24,12 @@
 	}
 	
 	function startQuerying() {
-	  setInterval(function(){
-	  var element = document.getElementById("start");
+			  var element = document.getElementById("start");
       element.parentNode.removeChild(element);	
+	  setInterval(function(){
+
 	    doQuery();
-	  },2000);
+	  },10000);
 	}	
 
     var dataCallback = function(data) {
