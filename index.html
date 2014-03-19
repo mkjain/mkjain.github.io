@@ -39,14 +39,14 @@
       for (var i = 0; i < data.length; i++) {
 	    var d = data[i];
 		for (var k in d.data) {
-		  document.getElementById("results")+= "<i>" + k + "</i>: " + d.data[k] + "<br />";
+		  document.getElementById("results").innerHTML += "<i>" + k + "</i>: " + d.data[k] + "<br />";
 		}
-		document.getElementById("results")+="<hr>";
+		document.getElementById("results").innerHTML +="<hr>";
 	  }
     }
     var doneCallback = function(data) {
       console.log("Done, all data:", data);
-      document.getElementById("results")+="<b>Done</b><hr>";
+      document.getElementById("results").innerHTML +="<b>Done</b><hr>";
       var element = document.getElementById("loader");
       element.parentNode.removeChild(element);
     }
