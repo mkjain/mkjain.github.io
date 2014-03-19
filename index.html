@@ -4,8 +4,6 @@
   <title>Spider Example on SkyBet</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://d7xe6yl2ckrgs.cloudfront.net/js/4/importio.js"></script>
-
-<!-- 2. Configure the library -->
   <script type="text/javascript">
     importio.init({
       "auth": {
@@ -15,8 +13,8 @@
       "host": "import.io"
     });
 
+	var count = 0;
     window.onload = pageLoad;
-
 	function pageLoad() {
 	    var startButton = document.getElementById("start");
 	
@@ -27,9 +25,10 @@
 			  var element = document.getElementById("start");
       element.parentNode.removeChild(element);	
 	  setInterval(function(){
-
+	
 	    doQuery();
-	  },10000);
+	    count+=1;
+	  },5000);
 	}	
 
     var dataCallback = function(data) {
@@ -46,7 +45,7 @@
     }
     var doneCallback = function(data) {
       console.log("Done, all data:", data);
-      document.getElementById("results").innerHTML +="<b>Done</b><hr>";
+      document.getElementById("results").innerHTML +="<b>Updated "+count+" times.</b><hr>";
       var element = document.getElementById("loader");
       element.parentNode.removeChild(element);
     }
