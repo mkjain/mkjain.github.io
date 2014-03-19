@@ -24,6 +24,7 @@
 	function startQuerying() {
 			  var element = document.getElementById("start");
       element.parentNode.removeChild(element);	
+      document.getElementById("header").innerHTML = "The data below is updating to reflect scores from SkyBet in real time every 5 seconds.";
       doQuery();
 	  setInterval(function(){
 	document.getElementById("results").innerHTML =""
@@ -67,7 +68,7 @@
   </script>
   <style>body { text-align: center; } button { line-height: 20px; color: #333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; cursor: pointer; border: 1px solid #CCC; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); outline: 0; padding: 11px 19px; font-size: 17.5px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; color: #FFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #082373; background-image: -moz-linear-gradient(top,#082373,#4C58A6); background-image: -webkit-gradient(linear,0 0,0 100%,from(#082373),to(#4C58A6)); background-image: -webkit-linear-gradient(top,#082373,#4C58A6); background-image: -o-linear-gradient(top,#082373,#4C58A6); background-image: linear-gradient(to bottom,#082373,#4C58A6); background-repeat: repeat-x; border-color: #4C58A6 #4C58A6 #05114C; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee4e93',endColorstr='#ffe92076',GradientType=0); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }</style>
   <body>
-  	<p>This example app will scrape all football data from SkyBet's live scoreboard and show it in a data format that can be further adapted to the XML requirements of the client.</p>
+  	<p id="header">This example app will scrape all football data from SkyBet's live scoreboard and show it in a data format that can be further adapted to the XML requirements of the client.</p>
     <button id="start">Start -></button>
     <div id="results" style="text-align:left; float:left;"></div>
   </body>
