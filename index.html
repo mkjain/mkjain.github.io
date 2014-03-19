@@ -25,16 +25,17 @@
 			  var element = document.getElementById("start");
       element.parentNode.removeChild(element);	
 	  setInterval(function(){
-	
+	document.getElementById("results").innerHTML =""
 	    doQuery();
 	    count+=5;
 	  },5000);
 	}	
 
     var dataCallback = function(data) {
-     //document.body.style.backgroundColor = "#eeeeee";	
-      document.getElementById("results").innerHTML +="<img id=\"loader\" src=\"http://www.henley-putnam.edu/Portals/_default/Skins/henley/images/loading.gif\"/>";
-      console.log("loader done");
+    
+      
+      document.getElementById("results").innerHTML +="<b>After "+ count-5 +" seconds.</b><hr>";
+      
       for (var i = 0; i < data.length; i++) {
 	    var d = data[i];
 		for (var k in d.data) {
@@ -45,7 +46,7 @@
     }
     var doneCallback = function(data) {
       console.log("Done, all data:", data);
-      document.getElementById("results").innerHTML +="<b>After "+ count-5 +" seconds.</b><hr>";
+      
       var element = document.getElementById("loader");
       element.parentNode.removeChild(element);
     }
