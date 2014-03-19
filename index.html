@@ -27,7 +27,6 @@
       document.getElementById("header").innerHTML = "The data below is updating to reflect scores from SkyBet in real time every 5 seconds.";
       doQuery();
 	  setInterval(function(){
-	//document.getElementById("results").innerHTML ="<img height=\"400\" width=\"400\" src=\"http://www.citizensforeurope.eu/squelettes/js/plugins/loading/images/loading.gif\" />";
 	    doQuery();
 	    count+=5;
 	  },5000);
@@ -53,15 +52,14 @@
       element.parentNode.removeChild(element);
     }
 
-// 3. Do the query (when the function is called)
     var doQuery = function() {
-      // Query for tile football_skybet
-      importio.query({
+
+        importio.query({
         "connectorGuids": [
-          "aa4a65d9-2b6d-4140-87a0-9b287cee2ee6"
+          "b91f6295-ab97-4f6f-bdcd-fa16de83b365"
         ],
         "input": {
-          "webpage/url": "http://www.skybet.com/football"
+          "webpage/url": "http://www.skybet.com/"
         }
       }, { "data": dataCallback, "done": doneCallback });
     }
