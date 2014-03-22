@@ -24,12 +24,12 @@
 	function startQuerying() {
 			  var element = document.getElementById("start");
       element.parentNode.removeChild(element);	
-      document.getElementById("header").innerHTML = "The data below is updating to reflect scores from SkyBet in real time every 5 seconds.";
+      document.getElementById("header").innerHTML = "The data below is updating to reflect scores from SkyBet in real time every 0.5 seconds.";
       doQuery();
 	  setInterval(function(){
 	    doQuery();
-	    count+=5;
-	  },5000);
+	    count+=0.5;
+	  },500);
 	}	
 
     var dataCallback = function(data) {
